@@ -44,6 +44,8 @@ set_from_resource       $theme-active     foreground
 set_from_resource       $theme-inactive   trueblack
 
 client.background	      $background
+#client.focused          $theme-active   $theme-active   $theme-inactive $theme-active   $theme-active
+#client.focused_inactive $theme-inactive $theme-inactive $theme-active   $theme-active   $theme-inactive
 client.unfocused        $theme-inactive $theme-inactive $theme-active   $theme-inactive $theme-inactive
 
 client.focused #6AB0E3 #6AB0E3 #6AB0E3 #6AB0E3 #6AB0E3
@@ -172,6 +174,8 @@ bindsym $mod+5 workspace number 5
 bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
+#bindsym $mod+9 workspace number 9
+#bindsym $mod+0 workspace number 10
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
@@ -184,10 +188,14 @@ bindsym $mod+Shift+5 move container to workspace number 5
 bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
+#bindsym $mod+Shift+9 move container to workspace number 9
+#bindsym $mod+Shift+0 move container to workspace number 10
+
 
 ##########################################################
 ##> Workspace Rules
 ##########################################################
+
 
 for_window [class="Firefox"] move to workspace 1
 for_window [class="termite"] move to workspace 2
@@ -211,7 +219,7 @@ exec_always --no-startup-id "~/.config/polybar/launch.sh"
 
 
 # Wallpaper
-exec_always --no-startup-id "nitrogen --restore"
+exec_always --no-startup-id "~/.config/i3/wallpaper.sh"
 
 
 # Night Light
@@ -241,4 +249,6 @@ exec_always --no-startup-id "xdo lower $(xdo id -n polybar); xdo raise $(xdo id 
 ##> Setup Initial Apps
 ##########################################################
 
+
 exec --no-startup-id nm-applet
+
