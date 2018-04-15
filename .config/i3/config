@@ -27,7 +27,7 @@ force_focus_wrapping force
 ##########################################################
 
 # Gaps
-gaps inner 20
+gaps inner 10
 smart_borders no_gaps
 smart_gaps on
 
@@ -244,6 +244,7 @@ exec_always --no-startup-id "dropbox"
 # Reposition Polybar
 exec_always --no-startup-id "xdo lower $(xdo id -n polybar); xdo raise $(xdo id -n tray)"
 
+exec_always --no-startup-id "owncloud"
 
 ##########################################################
 ##> Setup Initial Apps
